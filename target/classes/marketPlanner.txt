@@ -1,0 +1,139 @@
+
+
+
+아이템 등록 v
+
+아이템 구매 v
+
+buyItem (ID 중복 방지) v
+
+구매, 철회시 비동기 충돌 방지 v
+
+철회시 아이템 돌려주기 v
+
+아이템 만료 회수 v
+
+구매시 알람띄우고 주인에게 돈주기 v
+
+플레이어 첫 접속시 DB 초기화
+
+
+구매시에는 반드시 추가로 check 하기
+(동시에 구매하는 사람이 있는지 체크하고 비동기 오류 발생을 최소화)
+
+Guardians ItemData 가져오기
+
+MarketManager
+  public void getPLayerItems
+
+  //비동기로 모든 아이템을 검색
+  //기존 리스트를 받고 새롭게 바꿈 (비동기로 사용하여 return이 없음)
+  public void search(ArrayList<MarketItem> items, CountDownLatch latch, SearchType, isReversed, levelRange) {
+    Async {
+      DataBaseConnection
+      getAllItems
+      Sorting
+      setItems //List 재설정
+      latch CountDown;
+    }
+  }
+
+  public void setMarketItem(Player, CountDownLatch latch) {
+    async;
+  }
+
+  //등록된 아이템을 불러옴
+  public void getMyItems(Player player) {
+
+  }
+
+  public void registerItem(Player, MarketItem) {
+
+  }
+
+  public void unRegisterItem(Player, MarketItem) {
+
+  }
+
+LevelRange - PAIR 객체와 거의 비슷, 최소 최대 레벨을 정함
+
+Enum SearchType {
+  COST,
+  LEVEL,
+  TIME,
+}
+
+MarketWindow implements Listener
+  private static final Set<Player> noClick;
+  private static final String mainGUI
+  private static final String myItemGUI
+  private static final String registerGUI
+  private final Player player
+  private ArrayList<MarketItem> searchedList;
+  private SearchType searchType //검색 종류 (enum)
+  private boolean reversed = false; //검색 결과를 반대로
+  private ArrayList<MarketItem> myItems;
+
+  Constructor(Player) (=open Window) {
+    register
+    openMain
+    player
+    setPlayerWindow
+    setSearchedList
+  }
+
+  public void disable() {
+    close
+    unregister
+    setPlayerWindow
+  }
+
+
+  //더블 클릭 방지
+  @EventHandler
+  public void onQuit() {
+    disable();
+  }
+
+  public void onInvClickMain() {
+
+  }
+  public void onInvClickMyItems() {
+
+  }
+  public void onInvClickRegister() {
+
+  }
+
+
+MarketItem implements ConfigurationSerializable, Comparable
+  private final Player Owner
+  private final String uuid
+  private ID
+  private final ItemStack item
+
+  Constructor(String uuid, int id, ItemStack item) {
+    owner, uuid, id, item
+  }
+
+  public Map<String, Object> serialize() {
+    uuid, id, item
+  }
+
+  public static MarketItem deserialize() {
+    uuid, id, item
+  }
+
+  public Compare() {
+    정렬
+  }
+
+DataBase table:marketData
+
+uuid ArrayList<MarketItem>
+player : ArrayList<MarketItem>
+
+
+
+
+

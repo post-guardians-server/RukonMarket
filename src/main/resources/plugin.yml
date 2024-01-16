@@ -1,0 +1,12 @@
+main:  me.rukon0621.rukonmarket.RukonMarket
+version: 1.0
+api-version: 1.18
+author: Rukon
+name: RukonMarket
+depend:
+  - Guardians
+commands:
+  marketCommand:
+    usage: /marketCommand
+  장터글:
+    usage: /장터글
