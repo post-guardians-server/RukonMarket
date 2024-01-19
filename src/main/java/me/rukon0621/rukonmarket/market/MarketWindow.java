@@ -632,7 +632,8 @@ public class MarketWindow implements Listener {
                     }
                 };
             }
-        } else if (Msg.recolor(e.getView().getTitle()).equals(myItemGUI)) {
+        }
+        else if (Msg.recolor(e.getView().getTitle()).equals(myItemGUI)) {
             e.setCancelled(true);
             if (noClick.contains(player)) return;
             if (e.getRawSlot() == -999) {
@@ -778,7 +779,8 @@ public class MarketWindow implements Listener {
                     };
                 }
             }.runTaskAsynchronously(plugin);
-        } else if (Msg.recolor(e.getView().getTitle()).equals(registerGUI)) {
+        }
+        else if (Msg.recolor(e.getView().getTitle()).equals(registerGUI)) {
             e.setCancelled(true);
             if (noClick.contains(player)) return;
             if (e.getRawSlot() == -999) {

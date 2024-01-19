@@ -1,15 +1,7 @@
 package me.rukon0621.rukonmarket.speaker;
 
-import me.rukon0621.guardians.data.PlayerData;
-import me.rukon0621.guardians.helper.InvClass;
-import me.rukon0621.guardians.helper.ItemClass;
 import me.rukon0621.guardians.helper.Msg;
-import me.rukon0621.guardians.offlineMessage.OfflineMessageManager;
-import me.rukon0621.pay.PaymentData;
 import me.rukon0621.rukonmarket.RukonMarket;
-import me.rukon0621.rukonmarket.market.MarketItem;
-import me.rukon0621.rukonmarket.market.MarketManager;
-import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -28,12 +20,15 @@ public class MarketSpeakerCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
-
         Player player = (Player) commandSender;
-        new MarketSpeakerManager().openMyItems(player);
+        long cool = MarketTimer.getInstance().getCoolDown(player);
+        if(cool > 0) {
+            Msg.warn(player, String.format("&f다시 홍보글을 사용하려면 &b%d초&f를 기다려야 합니다.", cool), pfix);
+            return true;
+        }
+        RukonMarket.inst().getSpeakerManager().openSelectingWindow(player);
         player.playSound(player, Sound.UI_BUTTON_CLICK, 1, 1.5f);
-
-        return false;
+        return true;
     }
 
 }

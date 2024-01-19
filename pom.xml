@@ -44,21 +44,28 @@
             <artifactId>Guardians</artifactId>
             <scope>system</scope>
             <version>1.0</version>
-            <systemPath>C:\Users\ty_ty\OneDrive\바탕 화면\코딩자료\RPG서버 마크\jar\Guardians-1.0-SNAPSHOT.jar</systemPath>
+            <systemPath>C:\pgzPlugins\Guardians-1.0-SNAPSHOT.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>RukonPayment</groupId>
             <artifactId>RukonPayment</artifactId>
             <scope>system</scope>
             <version>1.0</version>
-            <systemPath>C:\Users\ty_ty\OneDrive\바탕 화면\코딩자료\RPG서버 마크\jar\RukonPayment-1.0-SNAPSHOT.jar</systemPath>
+            <systemPath>C:\pgzPlugins\RukonPayment-1.0-SNAPSHOT.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>RukonGUI</groupId>
+            <artifactId>RukonGUI</artifactId>
+            <scope>system</scope>
+            <version>1.0</version>
+            <systemPath>C:\pgzPlugins\RukonGUI-1.0-SNAPSHOT.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>RukonCallback</groupId>
             <artifactId>RukonCallback</artifactId>
             <scope>system</scope>
             <version>1.0</version>
-            <systemPath>C:\Users\ty_ty\OneDrive\바탕 화면\코딩자료\RPG서버 마크\jar\RukonCallback-1.0.jar</systemPath>
+            <systemPath>C:\pgzPlugins\RukonCallback-1.0.jar</systemPath>
         </dependency>
     </dependencies>
 
